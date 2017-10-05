@@ -5,6 +5,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
+
+import static android.R.attr.action;
 
 /**
  * Created by mcbud on 2017-10-05.
@@ -53,6 +56,33 @@ public class BitmapButton  extends AppCompatButton{
     public void setIcon(int iconNormal, int iconClicked){
         this.iconNormal = iconNormal;
         this.iconClicked = iconClicked;
+    }
+
+    public boolean onTouchEvent(MotionEvent event){
+        super.onTouchEvent(event);
+
+        switch(action){
+            case MotionEvent.ACTION_DOWN:
+                setBackgroundResource(this.iconClicked);
+
+                iconStatus = STATUS_CLICKED;
+
+                break;
+
+            case MotionEvent.ACTION_OUTSIDE:
+            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_UP:
+                setBackgroundResource(this.iconNormal);
+
+                iconStatus = STATUS_NORMAL;
+
+                break;
+        }
+
+        // 다시 그리기
+        invalidate();
+
+        return true;
     }
 
 }
