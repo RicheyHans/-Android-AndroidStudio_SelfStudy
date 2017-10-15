@@ -5,7 +5,7 @@
 * AdapterView
  : 항목의 집합을 표시하는 위젯의 집합(ViewGroup 하위)
  : 550p. 클래스 계층도
-<br>
+
 * Adapter
  : AdapterVIew들은 표시 항목 데이터를 직접 관리하지 않고 'Adapter'를 통해서 관리
   (데이터의 종류 / 개수의 다양성 감안 + 관리의 효용성)
