@@ -23,6 +23,8 @@
   ...
   ```
 
+  <br>
+
   * context, cls 인수로 받는 생성자
   ```
   Intent intent = new Intent(this, SubActivity.class);
@@ -30,3 +32,38 @@
   ```
   > 주로 서브 액티비티 호출에 활용하며, 호출대상이 분명한 **명시적 인텐트(Explicit Intent)**<br>
   > context는 호출자의 정보(주로 this), cls는 호출되는 액티비티의 클래스
+
+<br>
+
+* Intent 보유 가능 정보
+
+<br>
+
+  1. Action
+      - **실행할 동작** 이며, 어떤 작업을 수행할 것인지 지정
+      - ACTION_CALL, ACTION_EDIT, ACTION_VIEW, ACTION_HEADSET_PLUG...
+      - getAction, setAction 메서드 사용
+
+  <br>
+
+  2. DATA
+      - Action에 필요한 **상세 데이터** 를 제공(작업거리)
+      - 액션의 목적 대상 종류는 광범위하므로, 임의의 대상을 특정지을 수 있는 **URI** 타입
+        (url, 파일 경로, 주소록 레코드 등 지정 가능)
+      - getData, setData 사용
+
+  <br>
+
+  3. Type
+      - 대상의 타입. 주로 자동 판정(http://, tel:~)
+      - 필요시 getType, setType 사용해 MIME타입 지정
+
+  <br>
+
+  4. Category
+
+  <br>
+
+  5. Component
+      - 인텐트를 처리할 컴포넌트 명시적 지정
+      - 이 속성이 지정되면 명시적 인텐트이므로 다른 정보는 참조하지 않는다.
