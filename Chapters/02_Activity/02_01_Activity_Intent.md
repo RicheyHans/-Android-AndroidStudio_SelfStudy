@@ -14,7 +14,7 @@
   ```
   void startActivity(Intent intent)
   ```
-  > 호출을 위해, 호출 대상과 작업 내용이 담긴 Intent 객체를 생성해야 함
+  > 호출을 위해, 호출 대상과 작업 내용이 담긴 Intent 객체를 생성해야 함<br>
   > 주로 ACTION, URI, 클래스를 취하는 생성자 활용
   ```
   ...
@@ -28,7 +28,5 @@
   Intent intent = new Intent(this, SubActivity.class);
   startActivity(intent);
   ```
-  > 주로 서브 액티비티 호출에 활용하며, 호출대상이 분명한 **명시적 인텐트(Explicit Intent)**
+  > 주로 서브 액티비티 호출에 활용하며, 호출대상이 분명한 **명시적 인텐트(Explicit Intent)**<br>
   > context는 호출자의 정보(주로 this), cls는 호출되는 액티비티의 클래스
-
-  
