@@ -112,6 +112,48 @@
     startActivityForResult(Intent intent, int requestCode)
     ```
     > intent는 호출 대상이 보유 <br>
-    > requestCode는 호출한 대상을 식별하기 위한 변수로, 리턴 값을 받을 대상을 구분
+    > requestCode는 호출한 대상을 식별하기 위한 변수(0이상의 정수)로, 리턴 값을 받을 대상을 구분
 
-    
+    ```
+    onActivityResult(int requestCode, int resultCode, Intent data)
+    ```
+    > startActivityForResult로 '호출되었던' (서브) 액티비티가 종료되면 호출된다.
+    > 상술한 requestCode, 실행 결과인 resultCode, 리턴값(Data안의 Extra)를 파라미터로 사용
+
+<br>
+
+  * Activity 사이의 호출 예시
+    * 호출하는 Main Activity
+      ```
+      final static int ACT_EDIT = 999;
+
+      ... // 버튼 클릭
+      Intent intent = new Intent(this, SubActivity.class);
+      intent.putExtra("TextIn", mText.getText().toString());
+      startActivityForResult(intent, ACT_EDIT);
+
+      void onActivityResult(int requestCode, int resultCode, Intent data){
+        switch(requestCode){
+          case ACT_EDIT:
+            if(resultCode == RESULT_OK){
+              mText.setText(data.getStringExtra("TextOut"));
+            }
+            break;
+        }
+      }
+      ```
+
+    <br>
+
+    * 호출되는 SubActivity
+      ```
+      // MainActivity에서 호출하며 전달한 값 컨트롤
+      Intent intent = getIntent();
+      String text = intent.getStringExtra("TextIn");
+
+      ...  // 처리된 값 특정 버튼 누르면 결과값을 Main으로 전달하면서 액티비티 종료
+      Intent intent = new Intent();
+      intent.putExtra("TextOut", mEidt.getText().toString());
+      setResult(RESULT_OK, intent);
+      finish();
+      ```
