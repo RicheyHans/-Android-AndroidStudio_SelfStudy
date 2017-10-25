@@ -15,5 +15,5 @@ Android Studio self study projects artices and examples
 
 
 ##### 05. RecyclerView [link](https://github.com/RicheyHans/-Android-AndroidStudio_SelfStudy/blob/master/Chapters/05_RecyclerView/05_RecyclerView.md)
-  * ref. project 1(meme-orm) [link](https://github.com/RicheyHans/-Android-Android_Studio_Lecture/tree/master/AndroidMemoORM_170922)
+  * ref. project 1(memo-ORM) [link](https://github.com/RicheyHans/-Android-Android_Studio_Lecture/tree/master/AndroidMemoORM_170922)
   * ref. project 2(subway) [link](https://github.com/RicheyHans/-Android-Android_Studio_Lecture/tree/master/SubwayTsRefact_171020)
