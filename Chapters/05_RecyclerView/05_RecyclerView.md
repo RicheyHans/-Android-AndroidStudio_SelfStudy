@@ -167,7 +167,7 @@
         - 이 레이아웃을 통해 뷰마다 크기가 다른 레이아웃을 만들 수 있다. 마치 Pinterest 같은 레이아웃 구성가능.
     3. GridLayoutManager
         - 갤러리(GridView) 같은 격자형 리스트를 만들 수 있습니다.
-        - 사용예시 // StaggeredGrid 레이아웃을 사용한다
+        - 사용예시 // StaggeredGrid 레이아웃을 사용한다.<br>
             RecyclerView.LayoutManager lm
                 = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
             lm = new LinearLayoutManager(this);
